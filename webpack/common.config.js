@@ -86,9 +86,9 @@ module.exports = {
   // Modules resolved
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
-    fallback: {
-      fs: false,
-    },
+    // fallback: {
+    //   fs: false,
+    // },
   },
   module: {
     strictExportPresence: true, // Strict mod to avoid of importing non-existent objects

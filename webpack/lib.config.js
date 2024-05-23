@@ -124,12 +124,12 @@ const plugins = [
   //     },
   //   }),
   new webpack.BannerPlugin(banner),
-  //   new BundleAnalyzerPlugin(),
+  new BundleAnalyzerPlugin(),
 ];
 
 module.exports = {
   plugins,
-
+  target: "web",
 	entry: path.join(__dirname, "..", "src", "index.tsx"),
   mode: "production",
   experiments: {
@@ -140,13 +140,37 @@ module.exports = {
     filename: "index.esm.js",
     libraryTarget: "module",
   },
-  externals: ["react"],
+  externals: [
+    'lodash',
+    // 'jquery',
+    'moment',
+    'moment-timezone',
+    // 'slate',
+    // 'emotion',
+    // '@emotion/react',
+    // '@emotion/css',
+    // 'prismjs',
+    // 'slate-plain-serializer',
+    // 'slate-react',
+    // 'react',
+    // 'react-dom',
+    // 'react-redux',
+    // 'redux',
+    // 'rxjs',
+    // 'react-router',
+    // 'react-router-dom',
+    // 'd3',
+    // 'angular',
+    '@grafana/ui',
+    '@grafana/runtime',
+    '@grafana/data',
+  ],
 
   resolve: {
     extensions: [".ts", ".tsx", ".js", "jsx", ".json", ".css"],
-    fallback: {
-      fs: false,
-    },
+    // fallback: {
+    //   fs: false,
+    // },
   },
 
   optimization: {

@@ -16,4 +16,10 @@ module.exports = merge(common, {
   output: {
     filename: "[name].[contenthash].js",
   },
+  resolve: {
+    extensions: [".tsx", ".ts", ".js"],
+    fallback: {
+      fs: false,
+    },
+  },
 });
