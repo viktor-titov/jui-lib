@@ -43,6 +43,9 @@ const common = {
   externals: ["react"],
   resolve: {
     extensions: [".ts", ".tsx", ".js", "jsx", ".json", ".css"],
+    fallback: {
+      "fs": false
+    },
   },
   module: {
     rules: [

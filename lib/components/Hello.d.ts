@@ -1,6 +1,6 @@
-import React from "react";
+/// <reference types="react" />
 type Props = {
     [key: string]: any;
 };
-declare const Hello: (props: Props) => React.JSX.Element;
+declare const Hello: (props: Props) => JSX.Element;
 export default Hello;

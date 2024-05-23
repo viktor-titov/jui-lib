@@ -1,3 +1,2 @@
 export default World;
-declare function World(): React.JSX.Element;
-import React from "react";
+declare function World(): JSX.Element;
