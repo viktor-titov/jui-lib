@@ -153,7 +153,7 @@ module.exports = {
     // 'slate-plain-serializer',
     // 'slate-react',
     // 'react',
-    // 'react-dom',
+    'react-dom',
     // 'react-redux',
     // 'redux',
     // 'rxjs',
@@ -161,9 +161,9 @@ module.exports = {
     // 'react-router-dom',
     // 'd3',
     // 'angular',
-    '@grafana/ui',
+    // '@grafana/ui',
     '@grafana/runtime',
-    '@grafana/data',
+    // '@grafana/data',
   ],
 
   resolve: {
