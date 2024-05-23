@@ -39,7 +39,7 @@ const banner = ` Name: ${pkgName}
 // common
 const common = {
   mode: "production",
-  entry: "./src/index.ts",
+  entry: "./src/index.tsx",
   externals: ["react"],
   resolve: {
     extensions: [".ts", ".tsx", ".js", "jsx", ".json", ".css"],
@@ -93,7 +93,7 @@ const common = {
 module.exports = [
   {
     output: {
-      path: resolve(__dirname, "dist"),
+      path: resolve(__dirname, "lib"),
       filename: "[name].common.js",
       library: {
         type: "commonjs",
@@ -103,7 +103,7 @@ module.exports = [
   },
   {
     output: {
-      path: resolve(__dirname, "dist"),
+      path: resolve(__dirname, "lib"),
       filename: "[name].umd.js",
       libraryTarget: "umd",
     },
@@ -114,7 +114,7 @@ module.exports = [
       outputModule: true,
     },
     output: {
-      path: resolve(__dirname, "dist"),
+      path: resolve(__dirname, "lib"),
       filename: "[name].esm.js",
       libraryTarget: "module",
     },
@@ -122,7 +122,7 @@ module.exports = [
   },
   {
     output: {
-      path: resolve(__dirname, "dist"),
+      path: resolve(__dirname, "lib"),
       filename: "[name].min.js",
     },
     ...common,
