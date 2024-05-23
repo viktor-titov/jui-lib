@@ -33,7 +33,6 @@ const banner = ` Name: ${pkgName}
  Homepage: ${homepage}
  Repository: ${repository.url}
 
- Copyright (c) ${author.replace(/ *<[^)]*> */g, " ")} and project contributors.
 
  This source code is licensed under the ${license} license found in the LICENSE file in the root directory of this source tree.`;
 
