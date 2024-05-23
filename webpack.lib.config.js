@@ -93,8 +93,8 @@ const common = {
 module.exports = [
   {
     output: {
-      path: resolve(__dirname, "lib"),
-      filename: "[name].common.js",
+      path: resolve(__dirname, "dist"),
+      filename: "index.common.js",
       library: {
         type: "commonjs",
       },
@@ -103,8 +103,8 @@ module.exports = [
   },
   {
     output: {
-      path: resolve(__dirname, "lib"),
-      filename: "[name].umd.js",
+      path: resolve(__dirname, "dist"),
+      filename: "index.umd.js",
       libraryTarget: "umd",
     },
     ...common,
@@ -114,16 +114,16 @@ module.exports = [
       outputModule: true,
     },
     output: {
-      path: resolve(__dirname, "lib"),
-      filename: "[name].esm.js",
+      path: resolve(__dirname, "dist"),
+      filename: "index.js",
       libraryTarget: "module",
     },
     ...common,
   },
   {
     output: {
-      path: resolve(__dirname, "lib"),
-      filename: "[name].min.js",
+      path: resolve(__dirname, "dist"),
+      filename: "index.min.js",
     },
     ...common,
   },
