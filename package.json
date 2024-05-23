@@ -1,11 +1,10 @@
 {
   "name": "@viktor-titov/jui-lib",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Experiment with config for jaeger-ui components lib",
-  "main": "dist/index.js",
-  "module": "dist/esm/index.esm.js",
-  "unpkg": "dist/index.min.js",
-  "types": "dist/index.d.ts",
+  "main": "lib/index.js",
+  "module": "lib/index.js",
+  "types": "lib/index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/viktor-titov/jui-lib"

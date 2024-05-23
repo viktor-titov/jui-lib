@@ -39,7 +39,7 @@ const banner = ` Name: ${pkgName}
 // common
 const common = {
   mode: "production",
-  entry: "./src/index.tsx",
+  entry: "./src/index.ts",
   externals: ["react"],
   resolve: {
     extensions: [".ts", ".tsx", ".js", "jsx", ".json", ".css"],
