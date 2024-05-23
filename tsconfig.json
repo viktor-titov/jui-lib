@@ -19,14 +19,11 @@
     ],
     "typeRoots": [
       "node_modules/@types",
-      "src/types"
+      "src/lib/types"
     ],
   },
   "include": [
-    "src",
     "typings",
-    "public_types/jquery/*.ts",
-    "public_types/*.d.ts",
   ],
   "exclude": [
     "./src/**/*.test.ts",

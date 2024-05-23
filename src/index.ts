@@ -1,15 +1,15 @@
-export { default as TraceTimelineViewer } from './TraceTimelineViewer';
-export { default as TracePageHeader } from './TracePageHeader';
-export { default as SpanBarSettings } from './settings/SpanBarSettings';
-export { default as DetailState } from './TraceTimelineViewer/SpanDetail/DetailState';
-export { default as transformTraceData } from './model/transform-trace-data';
-export { default as filterSpans } from './utils/filter-spans';
+export { default as TraceTimelineViewer } from "./lib/TraceTimelineViewer";
+export { default as TracePageHeader } from "./lib/TracePageHeader";
+export { default as SpanBarSettings } from "./lib/settings/SpanBarSettings";
+export { default as DetailState } from "./lib/TraceTimelineViewer/SpanDetail/DetailState";
+export { default as transformTraceData } from "./lib/model/transform-trace-data";
+export { default as filterSpans } from "./lib/utils/filter-spans";
 
-export * from './common/index'
+export * from "./lib/common/index";
 
-export * from './Theme';
-export * from './TraceTimelineViewer/types';
+export * from "./lib/Theme";
+export * from "./lib/TraceTimelineViewer/types";
 
-export * from './demo/trace-generators'
+export * from "./lib/demo/trace-generators";
 
-export * from './types';
+export * from "./lib/types";
