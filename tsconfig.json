@@ -19,11 +19,11 @@
     ],
     "typeRoots": [
       "node_modules/@types",
-      "src/lib/types"
     ],
   },
   "include": [
     "typings",
+    "src/lib"
   ],
   "exclude": [
     "./src/**/*.test.ts",
@@ -33,8 +33,7 @@
     "dist",
     "lib",
     ".vscode",
-    "webpack.*.js",
-    "*.config.js",
+    "webpack",
     "**/*.test.ts*"
   ]
 }
