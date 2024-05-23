@@ -1,6 +1,6 @@
 {
   "name": "@viktor-titov/jui-lib",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Experiment with config for jaeger-ui components lib",
   "main": "dist/index.common.js",
   "module": "dist/index.js",
