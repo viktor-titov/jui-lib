@@ -94,7 +94,7 @@ module.exports = [
   {
     output: {
       path: resolve(__dirname, "dist"),
-      filename: "index.common.js",
+      filename: "[name].common.js",
       library: {
         type: "commonjs",
       },
@@ -104,7 +104,7 @@ module.exports = [
   {
     output: {
       path: resolve(__dirname, "dist"),
-      filename: "index.umd.js",
+      filename: "[name].umd.js",
       libraryTarget: "umd",
     },
     ...common,
@@ -115,7 +115,7 @@ module.exports = [
     },
     output: {
       path: resolve(__dirname, "dist"),
-      filename: "index.js",
+      filename: "[name].esm.js",
       libraryTarget: "module",
     },
     ...common,
@@ -123,7 +123,7 @@ module.exports = [
   {
     output: {
       path: resolve(__dirname, "dist"),
-      filename: "index.min.js",
+      filename: "[name].min.js",
     },
     ...common,
   },

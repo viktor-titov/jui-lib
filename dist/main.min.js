@@ -1,6 +1,6 @@
 /*!
  *  Name: @viktor-titov/jui-lib
- *  Version: 0.0.5
+ *  Version: 0.0.6
  *  Description: Experiment with config for jaeger-ui components lib
  *  Author: undefined
  *  Homepage: undefined
