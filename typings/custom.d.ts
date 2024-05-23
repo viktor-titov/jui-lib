@@ -1,4 +1,4 @@
-// Copyright (c) 2017 Uber Technologies, Inc.
+// Copyright (c) 2019 Uber Technologies, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,16 +12,24 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-export {
-  TraceSpan,
-  TraceResponse,
-  Trace,
-  TraceProcess,
-  TraceKeyValuePair,
-  TraceLink,
-} from "./trace";
-export { SpanBarOptions, SpanBarOptionsData } from "../settings/SpanBarSettings";
-export { default as TTraceTimeline } from "./TTraceTimeline";
-export { default as TNil } from "./TNil";
-export { SpanLinkFunc, SpanLinkDef } from "./links";
-export * from "@grafana/data";
+// For inlined envvars
+declare const process: {
+  env: {
+    NODE_ENV: string;
+    REACT_APP_GA_DEBUG?: string;
+    REACT_APP_VSN_STATE?: string;
+  };
+};
+
+declare module 'combokeys' {
+  export default class Combokeys {
+    constructor(element: HTMLElement);
+    bind: (binding: string | string[], handler: CombokeysHandler) => void;
+    reset: () => void;
+  }
+}
+
+declare module 'react-helmet';
+declare module 'json-markup';
+declare module 'react-vis-force';
+declare module 'tween-functions';

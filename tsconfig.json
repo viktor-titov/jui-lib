@@ -4,7 +4,7 @@
     "sourceMap": true,
     "declaration": true,
     "module": "esnext",
-    "target": "es2020",
+    "target": "es6",
     "noEmit": false,
     "jsx": "react",
     "allowJs": true,
@@ -12,10 +12,19 @@
     "noImplicitAny": false,
     "noImplicitThis": false,
     "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "lib": [
+      "dom",
+      "esnext"
+    ],
+    "typeRoots": [
+      "node_modules/@types",
+      "src/types"
+    ],
   },
   "include": [
     "src",
+    "typings",
     "public_types/jquery/*.ts",
     "public_types/*.d.ts",
   ],
@@ -26,6 +35,9 @@
     "build",
     "dist",
     "lib",
-    ".vscode"
+    ".vscode",
+    "webpack.*.js",
+    "*.config.js",
+    "**/*.test.ts*"
   ]
 }

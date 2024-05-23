@@ -29,9 +29,18 @@ const common_config = {
   devtool: "source-map",
   devServer: {
     static: "./dist",
+    client: {
+      overlay: {
+        errors: true,
+        warnings: true,
+      },
+    },
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".jsx"],
+    fallback: {
+      "fs": false
+    },
   },
   module: {
     rules: [

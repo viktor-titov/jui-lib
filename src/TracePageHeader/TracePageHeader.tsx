@@ -21,7 +21,12 @@ import MdKeyboardArrowRight from 'react-icons/lib/md/keyboard-arrow-right';
 import { dateTimeFormat, GrafanaTheme2, TimeZone } from '@grafana/data';
 import { useStyles2 } from '@grafana/ui';
 
-import { autoColor, TUpdateViewRangeTimeFunction, ViewRange, ViewRangeTimeUpdate } from '..';
+import {
+  autoColor,
+  TUpdateViewRangeTimeFunction,
+  ViewRange,
+  ViewRangeTimeUpdate,
+} from '..';
 import ExternalLinks from '../common/ExternalLinks';
 import LabeledList from '../common/LabeledList';
 import TraceName from '../common/TraceName';
@@ -120,7 +125,7 @@ const getStyles = (theme: GrafanaTheme2) => {
         label: TracePageHeaderOverviewItemValueDetail;
         color: #aaa;
       `,
-      'trace-item-value-detail'
+      'trace-item-value-detail',
     ),
     TracePageHeaderOverviewItemValue: css`
       label: TracePageHeaderOverviewItemValue;
@@ -158,14 +163,23 @@ export const HEADER_ITEMS = [
   {
     key: 'timestamp',
     label: 'Trace Start:',
-    renderer(trace: Trace, timeZone: TimeZone, styles: ReturnType<typeof getStyles>) {
+    renderer(
+      trace: Trace,
+      timeZone: TimeZone,
+      styles: ReturnType<typeof getStyles>,
+    ) {
       // Convert date from micro to milli seconds
-      const dateStr = dateTimeFormat(trace.startTime / 1000, { timeZone, defaultWithMS: true });
+      const dateStr = dateTimeFormat(trace.startTime / 1000, {
+        timeZone,
+        defaultWithMS: true,
+      });
       const match = dateStr.match(/^(.+)(:\d\d\.\d+)$/);
       return match ? (
         <span className={styles.TracePageHeaderOverviewItemValue}>
           {match[1]}
-          <span className={styles.TracePageHeaderOverviewItemValueDetail}>{match[2]}</span>
+          <span className={styles.TracePageHeaderOverviewItemValueDetail}>
+            {match[2]}
+          </span>
         </span>
       ) : (
         dateStr
@@ -180,12 +194,14 @@ export const HEADER_ITEMS = [
   {
     key: 'service-count',
     label: 'Services:',
-    renderer: (trace: Trace) => new Set(_values(trace.processes).map((p) => p.serviceName)).size,
+    renderer: (trace: Trace) =>
+      new Set(_values(trace.processes).map((p) => p.serviceName)).size,
   },
   {
     key: 'depth',
     label: 'Depth:',
-    renderer: (trace: Trace) => _get(_maxBy(trace.spans, 'depth'), 'depth', 0) + 1,
+    renderer: (trace: Trace) =>
+      _get(_maxBy(trace.spans, 'depth'), 'depth', 0) + 1,
   },
   {
     key: 'span-count',
@@ -229,16 +245,25 @@ export default function TracePageHeader(props: TracePageHeaderEmbedProps) {
     });
 
   const title = (
-    <h1 className={cx(styles.TracePageHeaderTitle, canCollapse && styles.TracePageHeaderTitleCollapsible)}>
+    <h1
+      className={cx(
+        styles.TracePageHeaderTitle,
+        canCollapse && styles.TracePageHeaderTitleCollapsible,
+      )}
+    >
       <TraceName traceName={getTraceName(trace.spans)} />{' '}
-      <small className={cx(styles.TracePageHeaderTraceId, uTxMuted)}>{trace.traceID}</small>
+      <small className={cx(styles.TracePageHeaderTraceId, uTxMuted)}>
+        {trace.traceID}
+      </small>
     </h1>
   );
 
   return (
     <header className={styles.TracePageHeader}>
       <div className={styles.TracePageHeaderTitleRow}>
-        {links && links.length > 0 && <ExternalLinks links={links} className={styles.TracePageHeaderBack} />}
+        {links && links.length > 0 && (
+          <ExternalLinks links={links} className={styles.TracePageHeaderBack} />
+        )}
         {canCollapse ? (
           <button
             type="button"
@@ -250,7 +275,7 @@ export default function TracePageHeader(props: TracePageHeaderEmbedProps) {
             <MdKeyboardArrowRight
               className={cx(
                 styles.TracePageHeaderDetailToggle,
-                !slimView && styles.TracePageHeaderDetailToggleExpanded
+                !slimView && styles.TracePageHeaderDetailToggleExpanded,
               )}
             />
             {title}
@@ -259,7 +284,12 @@ export default function TracePageHeader(props: TracePageHeaderEmbedProps) {
           title
         )}
       </div>
-      {summaryItems && <LabeledList className={styles.TracePageHeaderOverviewItems} items={summaryItems} />}
+      {summaryItems && (
+        <LabeledList
+          className={styles.TracePageHeaderOverviewItems}
+          items={summaryItems}
+        />
+      )}
       {!hideMap && !slimView && (
         <SpanGraph
           trace={trace}
